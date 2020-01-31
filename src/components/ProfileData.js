@@ -25,7 +25,7 @@ const ProfileData = [
         id:2,
         name:"Alec",
         age:27,
-        imgUrl:"https://www.petmd.com/sites/default/files/Acute-Dog-Diarrhea-47066074.jpg",
+        imgUrl:"https://cdn-prod.medicalnewstoday.com/content/images/articles/322/322868/golden-retriever-puppy.jpg",
         job:"Executive, Goldman Sachs",
         activities:["Dogs","Concerts","Outdoosy stuff","Watch Rick and Morty"],
         chatInterests:[],

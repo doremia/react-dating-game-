@@ -20,7 +20,7 @@ const ProfileData = [
         id:2,
         name:"Alec",
         age:27,
-        imgUrl:"https://www.petmd.com/sites/default/files/Acute-Dog-Diarrhea-47066074.jpg",
+        imgUrl:"https://cdn-prod.medicalnewstoday.com/content/images/articles/322/322868/golden-retriever-puppy.jpg",
         job:"Executive, Goldman Sachs",
         activities:["Dogs","Concerts","Outdoosy stuff","Watch Rick and Morty"],
         chatInterests:[],
@@ -32,7 +32,7 @@ const ProfileData = [
         id:3,
         name:"Nathan",
         age:30,
-        imgUrl:"https://www.petmd.com/sites/default/files/Acute-Dog-Diarrhea-47066074.jpg",
+        imgUrl:"https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/HB4AT3D3IMI6TMPTWIZ74WAR54.jpg&w=767",
         job:"Doctor,  Doctors without borders",
         activities:["Independent movies","meditaion","Pixar","Plants","Makes good steaks"],
         chatInterests:[],
@@ -62,12 +62,11 @@ class CharactersRow extends Component {
 
     render(){
         const icons = ProfileData.map(icon => 
-            <ProfileIcon style={{display:"inline"}} potato={this.greet} icon={icon} />                   
+            <ProfileIcon key={icon.id} potato={this.greet} icon={icon} />                   
         )
 
         return(
             <div className="wrapper" style={{display:"flex"}}>
-
                 { icons }
                 {this.state.greeting ? <TextBox text={this.state.greeting} /> : null}
             </div>

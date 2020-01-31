@@ -1,9 +1,14 @@
 import React from "react"
 
 function TextBox(props) {
+    const speechStyle={
+        marginLeft:"30px"
+    }
 
     return (
-        <p> {props.text} </p>
+        <div className="speech-bubble">
+            <p className="speech" style={speechStyle} > {props.text} </p>
+        </div>
     )
 }
 
