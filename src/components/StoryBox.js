@@ -16,9 +16,10 @@ function StoryBox(props) {
     }
     
     return (
-        <div className="story-box" style= { storyStyle} >
+        <div className="story-box" style= { storyStyle} onClick = {props.onClick}>
+     
             { props.imgUrl ? <img src={ props.imgUrl } style={{width:"350px", height:"250px"}} alt="dog"/> :
-            <p className="story-text" style={ textStyle } > {props.text} </p> }
+                <p className="story-text" style={ textStyle } > {props.text} </p> }
         </div>
     )
 }

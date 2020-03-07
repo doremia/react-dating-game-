@@ -6,7 +6,7 @@ import UserRow from "./components/UserRow"
 function App() {
     return (
         <div className="container">
-            <header className="app-header"> X x X </header>
+            <header className="app-header"> *** </header>
             <CharactersRow />
             <StoryRow />
             <UserRow />

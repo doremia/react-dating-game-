@@ -9,8 +9,8 @@ const scenes = {
 }
 
 const prompts = {
-    welcome:"Come to know Kyle, Alec and Nathan! You will choose the guy you like the most in the end of the game and see if you guys are compatible by the options you choose during the game",
-    meet:"Start by meeting the charater first.",
+    welcome:"Come to know Kyle, Alec and Nathan! \ \ You will choose the guy you like the most in the end of the game and see if you guys are compatible by the options you choose during the game",
+    meet:"Start by meeting the charaters first. \  Click the buttons below \  Do things : To choose an activity to do together, \ Chat: To choose a topic of chat",
     chat:"What would you like to chat about?",
     activity:"What would you like to do for the date?",
     unlock:"You two have become more intimate. Here is a little thing about him...",
@@ -25,27 +25,47 @@ const endings = {
 class StoryRow extends Component {
     constructor(){
         super()
+
         this.state={
-            scene: scenes["sex"],
-            ending: endings["sad"]
+            prompt:"welcome",
+            scene: scenes["encounter"],
+            ending: "sad"
         }
-        // showEndings = this.showEndings.bind(this)
+
+        // this.showEndings = this.showEndings.bind(this)
+        this.handleClick = this.handleClick.bind(this)
     }
 
     // showEndings() {
-    //     console.log("showEndings")
-    //     this.setSate({endings: endings["sad"]})
-    //     return (this.state.endings)
+    //     this.setSate(prevState=> ({ending: "sad"}))
+    //     return (this.state.ending)
     // }
-
+    handleClick(){
+        if (this.state.prompt === "welcome") {
+            this.setState({ prompt: "meet" })
+            return (this.state.prompt) 
+        } 
+        else if (this.state.prompt === "meet") {
+            this.setState({ prompt: "chat"})
+            return (this.state.prompt)
+        }
+          
+        else if (this.state.prompt === "chat") {
+            this.setState({ prompt: "activity"})
+            return (this.state.prompt) 
+        }              
+    }
 
     render(){
+
         return(
-            <div className="story" style={{display:"flex"}}>
-                <StoryBox text={ this.state.scene}/>
+            <div className="story" style={{ display:"flex" }}>
+                <StoryBox text={ prompts[this.state.prompt] } onClick={ this.handleClick } />
+
                 <StoryBox 
                     imgUrl="https://static.wixstatic.com/media/3559fc_9d146ef9d5df4f3d9b4f95ba043bae4e~mv2_d_2250_1688_s_2.gif"/>
-                <StoryBox text={ this.state.ending }/>
+                
+                <StoryBox text={ endings[this.state.ending] } onClick={ this.showEndings } />
             </div>
         )
     }

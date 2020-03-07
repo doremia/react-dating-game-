@@ -9,7 +9,6 @@ function ChoiceButton(props) {
                 <button> {props.choice} </button>
             </div>
         )
-
 }
 
 export default ChoiceButton
